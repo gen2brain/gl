@@ -10,7 +10,6 @@ import (
 )
 
 const (
-	kCGLPFAAccelerated       = 73
 	kCGLPFAColorSize         = 8
 	kCGLPFAOpenGLProfile     = 99
 	kCGLOGLPVersionLegacy    = 0x1000
@@ -42,7 +41,7 @@ func NewContext(c Config) (func(), error) {
 	case c.Major == 3:
 		profile = kCGLOGLPVersion3_2_Core
 	}
-	attribs := []int32{kCGLPFAOpenGLProfile, profile, kCGLPFAAccelerated, kCGLPFAColorSize, 24, 0}
+	attribs := []int32{kCGLPFAOpenGLProfile, profile, kCGLPFAColorSize, 24, 0}
 	var pix uintptr
 	var n int32
 	if e := call.Call3(sym("CGLChoosePixelFormat"), cglChoosePixelFormatDesc,
