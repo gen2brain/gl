@@ -83,7 +83,7 @@ func main() {
 		if err := p.generate(*root); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("%-24s %5d commands %5d enums\n", ps.Dir, len(p.Commands), len(p.Enums))
+		fmt.Println(strings.TrimSpace(fmt.Sprintf("%-24s %5d commands %5d enums %s", ps.Dir, len(p.Commands), len(p.Enums), p.webglStats)))
 	}
 }
 

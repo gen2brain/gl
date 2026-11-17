@@ -529,6 +529,6 @@ func InitWithProcAddrFunc(getProcAddr func(name string) unsafe.Pointer) error {
 }
 `, p.Name)
 	b.Write(w.b.Bytes())
-	fmt.Printf("%-24s webgl: %d auto, %d hand-written, %d aliased, %d unsupported\n", p.Dir, w.stats["auto"], w.stats["hand"], w.stats["alias"], w.stats["stub"])
+	p.webglStats = fmt.Sprintf("webgl: %d auto, %d hand-written, %d aliased, %d unsupported", w.stats["auto"], w.stats["hand"], w.stats["alias"], w.stats["stub"])
 	return writeGo(filepath.Join(dir, "funcs_js.go"), &b)
 }

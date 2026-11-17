@@ -402,13 +402,14 @@ type PackageSpec struct {
 // Package is a selected set of commands and enums.
 type Package struct {
 	PackageSpec
-	idl      idl
-	exts     map[string]string
-	webglDir string
-	core     map[string]*Command
-	Name     string
-	Commands []*Command
-	Enums    []*Enum
+	idl        idl
+	exts       map[string]string
+	webglDir   string
+	webglStats string
+	core       map[string]*Command
+	Name       string
+	Commands   []*Command
+	Enums      []*Enum
 }
 
 func (s *Spec) Package(ps PackageSpec) (*Package, error) {

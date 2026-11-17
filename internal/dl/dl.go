@@ -30,3 +30,8 @@ func Sym(h uintptr, name string) uintptr {
 	}
 	return p
 }
+
+// Close unloads the library h.
+func Close(h uintptr) error {
+	return purego.Dlclose(h)
+}

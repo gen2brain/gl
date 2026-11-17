@@ -9,12 +9,12 @@ jobs:
         os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Install packages
       run: |
         sudo apt-get update -y; sudo apt-get -y install libegl1 libgl1 libgles2 libgl1-mesa-dri xvfb
@@ -43,12 +43,12 @@ jobs:
         go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Install packages
       run: |
         sudo dpkg --add-architecture i386; sudo apt-get update -y
@@ -68,12 +68,12 @@ jobs:
         go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Install packages
       run: |
         sudo apt-get update -y; sudo apt-get -y install qemu-user gcc-arm-linux-gnueabihf libc6-armhf-cross
@@ -97,20 +97,24 @@ jobs:
         go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Run go vet
       run: |
-        for target in linux/arm windows/386 windows/arm64 darwin/amd64 netbsd/amd64 netbsd/arm64 freebsd/arm64 js/wasm; do
+        for target in linux/arm windows/386 windows/arm64 darwin/amd64 netbsd/amd64 netbsd/arm64 js/wasm; do
           echo "$target"
           GOOS=${target%/*} GOARCH=${target#*/} CGO_ENABLED=0 go vet ./...
         done
     - name: Build
-      run: GOOS=freebsd GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=github.com/ebitengine/purego/internal/fakecgo=-std ./...
+      run: |
+        for arch in amd64 arm64; do
+          echo "freebsd/$arch"
+          GOOS=freebsd GOARCH=$arch CGO_ENABLED=0 go build -gcflags=github.com/ebitengine/purego/internal/fakecgo=-std ./...
+        done
 
   generate:
     strategy:
@@ -118,12 +122,12 @@ jobs:
         go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Generate
       run: go run ./internal/glgen && git diff --exit-code
     - name: Compare with go-gl
@@ -137,12 +141,12 @@ jobs:
         go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
     - name: Install Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: Build
       run: |
         mkdir -p ${{ runner.temp }}/www

@@ -58,6 +58,7 @@ func loadLib(t testing.TB) uintptr {
 	if err != nil {
 		t.Fatal(err)
 	}
+	t.Cleanup(func() { dl.Close(h) })
 	return h
 }
 

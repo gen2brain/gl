@@ -43,3 +43,8 @@ func OpenSystem(name string) (uintptr, error) {
 	}
 	return h, nil
 }
+
+// Close unloads the library h.
+func Close(h uintptr) error {
+	return syscall.FreeLibrary(syscall.Handle(h))
+}
