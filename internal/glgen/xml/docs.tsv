@@ -1,0 +1,641 @@
+glAccum	operate on the accumulation buffer
+glActiveShaderProgram	set the active program object for a program pipeline object
+glActiveTexture	select active texture unit
+glAlphaFunc	specify the alpha test function
+glAreTexturesResident	determine if textures are loaded in texture memory
+glArrayElement	render a vertex using the specified vertex array element
+glAttachShader	Attaches a shader object to a program object
+glBegin	delimit the vertices of a primitive or a group of like primitives
+glBeginConditionalRender	start conditional rendering
+glBeginQuery	delimit the boundaries of a query object
+glBeginQueryIndexed, glEndQueryIndexed	delimit the boundaries of a query object on an indexed target
+glBeginTransformFeedback	start transform feedback operation
+glBindAttribLocation	Associates a generic vertex attribute index with a named attribute variable
+glBindBuffer	bind a named buffer object
+glBindBufferBase	bind a buffer object to an indexed buffer target
+glBindBufferRange	bind a range within a buffer object to an indexed buffer target
+glBindBuffersBase	bind one or more buffer objects to a sequence of indexed buffer targets
+glBindBuffersRange	bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+glBindFragDataLocation	bind a user-defined varying out variable to a fragment shader color number
+glBindFragDataLocationIndexed	bind a user-defined varying out variable to a fragment shader color number and index
+glBindFramebuffer	bind a framebuffer to a framebuffer target
+glBindImageTexture	bind a level of a texture to an image unit
+glBindImageTextures	bind one or more named texture images to a sequence of consecutive image units
+glBindProgramPipeline	bind a program pipeline to the current context
+glBindRenderbuffer	bind a renderbuffer to a renderbuffer target
+glBindSampler	bind a named sampler to a texturing target
+glBindSamplers	bind one or more named sampler objects to a sequence of consecutive sampler units
+glBindTexture	bind a named texture to a texturing target
+glBindTextureUnit	bind an existing texture object to the specified texture unit
+glBindTextures	bind one or more named textures to a sequence of consecutive texture units
+glBindTransformFeedback	bind a transform feedback object
+glBindVertexArray	bind a vertex array object
+glBindVertexBuffer	bind a buffer to a vertex buffer bind point
+glBindVertexBuffers	attach multiple buffer objects to a vertex array object
+glBitmap	draw a bitmap
+glBlendBarrier	specifies a boundary between advanced blending passes
+glBlendColor	set the blend color
+glBlendEquation	specify the equation used for both the RGB blend equation and the Alpha blend equation
+glBlendEquationSeparate	set the RGB blend equation and the alpha blend equation separately
+glBlendFunc	specify pixel arithmetic
+glBlendFuncSeparate	specify pixel arithmetic for RGB and alpha components separately
+glBlitFramebuffer	copy a block of pixels from one framebuffer object to another
+glBlitNamedFramebuffer	copy a block of pixels from one framebuffer object to another
+glBufferData	creates and initializes a buffer object's data store
+glBufferStorage	creates and initializes a buffer object's immutable data store
+glBufferSubData	updates a subset of a buffer object's data store
+glCallList	execute a display list
+glCallLists	execute a list of display lists
+glCheckFramebufferStatus	check the completeness status of a framebuffer
+glCheckNamedFramebufferStatus	check the completeness status of a framebuffer
+glClampColor	specify whether data read via should be clamped
+glClear	clear buffers to preset values
+glClearAccum	specify clear values for the accumulation buffer
+glClearBuffer	clear individual buffers of a framebuffer
+glClearBufferData	fill a buffer object's data store with a fixed value
+glClearBufferSubData	fill all or part of buffer object's data store with a fixed value
+glClearColor	specify clear values for the color buffers
+glClearDepth	specify the clear value for the depth buffer
+glClearDepthf	specify the clear value for the depth buffer
+glClearIndex	specify the clear value for the color index buffers
+glClearNamedBufferData	fill a buffer object's data store with a fixed value
+glClearNamedBufferSubData	fill all or part of buffer object's data store with a fixed value
+glClearStencil	specify the clear value for the stencil buffer
+glClearTexImage	fills all a texture image with a constant value
+glClearTexSubImage	fills all or part of a texture image with a constant value
+glClientActiveTexture	select active texture unit
+glClientWaitSync	block and wait for a sync object to become signaled
+glClipControl	control clip coordinate to window coordinate behavior
+glClipPlane	specify a plane against which all geometry is clipped
+glColor	set the current color
+glColorMask, glColorMaski	enable and disable writing of frame buffer color components
+glColorMaterial	cause a material color to track the current color
+glColorPointer	define an array of colors
+glColorSubTable	respecify a portion of a color table
+glColorTable	define a color lookup table
+glColorTableParameter	set color lookup table parameters
+glCompileShader	Compiles a shader object
+glCompressedTexImage1D	specify a one-dimensional texture image in a compressed format
+glCompressedTexImage2D	specify a two-dimensional texture image in a compressed format
+glCompressedTexImage3D	specify a three-dimensional texture image in a compressed format
+glCompressedTexSubImage1D	specify a one-dimensional texture subimage in a compressed format
+glCompressedTexSubImage2D	specify a two-dimensional texture subimage in a compressed format
+glCompressedTexSubImage3D	specify a three-dimensional texture subimage in a compressed format
+glCompressedTextureSubImage1D	specify a one-dimensional texture subimage in a compressed format
+glCompressedTextureSubImage2D	specify a two-dimensional texture subimage in a compressed format
+glCompressedTextureSubImage3D	specify a three-dimensional texture subimage in a compressed format
+glConvolutionFilter1D	define a one-dimensional convolution filter
+glConvolutionFilter2D	define a two-dimensional convolution filter
+glConvolutionParameter	set convolution parameters
+glCopyBufferSubData	copy all or part of the data store of a buffer object to the data store of another buffer object
+glCopyColorSubTable	respecify a portion of a color table
+glCopyColorTable	copy pixels into a color table
+glCopyConvolutionFilter1D	copy pixels into a one-dimensional convolution filter
+glCopyConvolutionFilter2D	copy pixels into a two-dimensional convolution filter
+glCopyImageSubData	perform a raw data copy between two images
+glCopyNamedBufferSubData	copy all or part of the data store of a buffer object to the data store of another buffer object
+glCopyPixels	copy pixels in the frame buffer
+glCopyTexImage1D	copy pixels into a 1D texture image
+glCopyTexImage2D	copy pixels into a 2D texture image
+glCopyTexSubImage1D	copy a one-dimensional texture subimage
+glCopyTexSubImage2D	copy a two-dimensional texture subimage
+glCopyTexSubImage3D	copy a three-dimensional texture subimage
+glCopyTextureSubImage1D	copy a one-dimensional texture subimage
+glCopyTextureSubImage2D	copy a two-dimensional texture subimage
+glCopyTextureSubImage3D	copy a three-dimensional texture subimage
+glCreateBuffers	create buffer objects
+glCreateFramebuffers	create framebuffer objects
+glCreateProgram	Creates a program object
+glCreateProgramPipelines	create program pipeline objects
+glCreateQueries	create query objects
+glCreateRenderbuffers	create renderbuffer objects
+glCreateSamplers	create sampler objects
+glCreateShader	Creates a shader object
+glCreateShaderProgramv	create a stand-alone program from an array of null-terminated source code strings
+glCreateTextures	create texture objects
+glCreateTransformFeedbacks	create transform feedback objects
+glCreateVertexArrays	create vertex array objects
+glCullFace	specify whether front- or back-facing facets can be culled
+glCurrentPaletteMatrixOES	defines which of the palette's matrices is affected by subsequent matrix operations
+glDebugMessageCallback	specify a callback to receive debugging messages from the GL
+glDebugMessageControl	control the reporting of debug messages in a debug context
+glDebugMessageInsert	inject an application-supplied message into the debug message queue
+glDeleteBuffers	delete named buffer objects
+glDeleteFramebuffers	delete framebuffer objects
+glDeleteLists	delete a contiguous group of display lists
+glDeleteProgram	Deletes a program object
+glDeleteProgramPipelines	delete program pipeline objects
+glDeleteQueries	delete named query objects
+glDeleteRenderbuffers	delete renderbuffer objects
+glDeleteSamplers	delete named sampler objects
+glDeleteShader	Deletes a shader object
+glDeleteSync	delete a sync object
+glDeleteTextures	delete named textures
+glDeleteTransformFeedbacks	delete transform feedback objects
+glDeleteVertexArrays	delete vertex array objects
+glDepthFunc	specify the value used for depth buffer comparisons
+glDepthMask	enable or disable writing into the depth buffer
+glDepthRange	specify mapping of depth values from normalized device coordinates to window coordinates
+glDepthRangeArray	specify mapping of depth values from normalized device coordinates to window coordinates for a specified set of viewports
+glDepthRangeIndexed	specify mapping of depth values from normalized device coordinates to window coordinates for a specified viewport
+glDepthRangef	specify mapping of depth values from normalized device coordinates to window coordinates
+glDetachShader	Detaches a shader object from a program object to which it is attached
+glDisableVertexArrayAttrib	Enable or disable a generic vertex attribute array
+glDisableVertexAttribArray	Enable or disable a generic vertex attribute array
+glDispatchCompute	launch one or more compute work groups
+glDispatchComputeIndirect	launch one or more compute work groups using parameters stored in a buffer
+glDrawArrays	render primitives from array data
+glDrawArraysIndirect	render primitives from array data, taking parameters from memory
+glDrawArraysInstanced	draw multiple instances of a range of elements
+glDrawArraysInstancedBaseInstance	draw multiple instances of a range of elements with offset applied to instanced attributes
+glDrawBuffer	specify which color buffers are to be drawn into
+glDrawBuffers	Specifies a list of color buffers to be drawn into
+glDrawElements	render primitives from array data
+glDrawElementsBaseVertex	render primitives from array data with a per-element offset
+glDrawElementsIndirect	render indexed primitives from array data, taking parameters from memory
+glDrawElementsInstanced	draw multiple instances of a set of elements
+glDrawElementsInstancedBaseInstance	draw multiple instances of a set of elements with offset applied to instanced attributes
+glDrawElementsInstancedBaseVertex	render multiple instances of a set of primitives from array data with a per-element offset
+glDrawElementsInstancedBaseVertexBaseInstance	render multiple instances of a set of primitives from array data with a per-element offset
+glDrawPixels	write a block of pixels to the frame buffer
+glDrawRangeElements	render primitives from array data
+glDrawRangeElementsBaseVertex	render primitives from array data with a per-element offset
+glDrawTexfOES	draws a texture rectangle to the screen
+glDrawTexfvOES	draws a texture rectangle to the screen
+glDrawTexiOES	draws a texture rectangle to the screen
+glDrawTexivOES	draws a texture rectangle to the screen
+glDrawTexsOES	draws a texture rectangle to the screen
+glDrawTexsvOES	draws a texture rectangle to the screen
+glDrawTexxOES	draws a texture rectangle to the screen
+glDrawTexxvOES	draws a texture rectangle to the screen
+glDrawTransformFeedback	render primitives using a count derived from a transform feedback object
+glDrawTransformFeedbackInstanced	render multiple instances of primitives using a count derived from a transform feedback object
+glDrawTransformFeedbackStream	render primitives using a count derived from a specifed stream of a transform feedback object
+glDrawTransformFeedbackStreamInstanced	render multiple instances of primitives using a count derived from a specifed stream of a transform feedback object
+glEdgeFlag	flag edges as either boundary or nonboundary
+glEdgeFlagPointer	define an array of edge flags
+glEnable	enable or disable server-side GL capabilities
+glEnableClientState	enable or disable client-side capability
+glEnableVertexArrayAttrib	Enable or disable a generic vertex attribute array
+glEnableVertexAttribArray	Enable or disable a generic vertex attribute array
+glEvalCoord	evaluate enabled one- and two-dimensional maps
+glEvalMesh	compute a one- or two-dimensional grid of points or lines
+glEvalPoint	generate and evaluate a single point in a mesh
+glFeedbackBuffer	controls feedback mode
+glFenceSync	create a new sync object and insert it into the GL command stream
+glFinish	block until all GL execution is complete
+glFlush	force execution of GL commands in finite time
+glFlushMappedBufferRange	indicate modifications to a range of a mapped buffer
+glFlushMappedNamedBufferRange	indicate modifications to a range of a mapped buffer
+glFog	specify fog parameters
+glFogCoord	set the current fog coordinates
+glFogCoordPointer	define an array of fog coordinates
+glFramebufferParameteri	set a named parameter of a framebuffer object
+glFramebufferRenderbuffer	attach a renderbuffer as a logical buffer of a framebuffer object
+glFramebufferTexture	attach a level of a texture object as a logical buffer of a framebuffer object
+glFramebufferTexture2D	attach a level of a texture object as a logical buffer to the currently bound framebuffer object
+glFramebufferTextureLayer	attach a single layer of a texture object as a logical buffer of a framebuffer object
+glFrontFace	define front- and back-facing polygons
+glFrustum	multiply the current matrix by a perspective matrix
+glGenBuffers	generate buffer object names
+glGenFramebuffers	generate framebuffer object names
+glGenLists	generate a contiguous set of empty display lists
+glGenProgramPipelines	reserve program pipeline object names
+glGenQueries	generate query object names
+glGenRenderbuffers	generate renderbuffer object names
+glGenSamplers	generate sampler object names
+glGenTextures	generate texture names
+glGenTransformFeedbacks	reserve transform feedback object names
+glGenVertexArrays	generate vertex array object names
+glGenerateMipmap	generate mipmaps for a specified texture object
+glGenerateTextureMipmap	generate mipmaps for a specified texture object
+glGet	return the value or values of a selected parameter
+glGetActiveAtomicCounterBufferiv	retrieve information about the set of active atomic counter buffers for a program
+glGetActiveAttrib	Returns information about an active attribute variable for the specified program object
+glGetActiveSubroutineName	query the name of an active shader subroutine
+glGetActiveSubroutineUniform	query a property of an active shader subroutine uniform
+glGetActiveSubroutineUniformName	query the name of an active shader subroutine uniform
+glGetActiveUniform	Returns information about an active uniform variable for the specified program object
+glGetActiveUniformBlock	query information about an active uniform block
+glGetActiveUniformBlockName	retrieve the name of an active uniform block
+glGetActiveUniformBlockiv	query information about an active uniform block
+glGetActiveUniformName	query the name of an active uniform
+glGetActiveUniformsiv	Returns information about several active uniform variables for the specified program object
+glGetAttachedShaders	Returns the handles of the shader objects attached to a program object
+glGetAttribLocation	Returns the location of an attribute variable
+glGetBufferParameteri64v	return parameters of a buffer object
+glGetBufferParameteriv	return parameters of a buffer object
+glGetBufferPointerv	return the pointer to a mapped buffer object's data store
+glGetBufferSubData	returns a subset of a buffer object's data store
+glGetClipPlane	return the coefficients of the specified clipping plane
+glGetColorTable	retrieve contents of a color lookup table
+glGetColorTableParameter	get color lookup table parameters
+glGetCompressedTexImage	return a compressed texture image
+glGetCompressedTextureImage	return a compressed texture image
+glGetCompressedTextureSubImage	retrieve a sub-region of a compressed texture image from a compressed texture object
+glGetConvolutionFilter	get current 1D or 2D convolution filter kernel
+glGetConvolutionParameter	get convolution parameters
+glGetDebugMessageLog	retrieve messages from the debug message log
+glGetError	return error information
+glGetFragDataIndex	query the bindings of color indices to user-defined varying out variables
+glGetFragDataLocation	query the bindings of color numbers to user-defined varying out variables
+glGetFramebufferAttachmentParameteriv	retrieve information about attachments of a bound framebuffer object
+glGetFramebufferParameteriv	retrieve a named parameter from a framebuffer
+glGetGraphicsResetStatus	check if the rendering context has not been lost due to software or hardware issues
+glGetHistogram	get histogram table
+glGetHistogramParameter	get histogram parameters
+glGetInternalformat	retrieve information about implementation-dependent support for internal formats
+glGetInternalformativ	retrieve information about implementation-dependent support for internal formats
+glGetLight	return light source parameter values
+glGetMap	return evaluator parameters
+glGetMaterial	return material parameters
+glGetMinmax	get minimum and maximum pixel values
+glGetMinmaxParameter	get minmax parameters
+glGetMultisamplefv	retrieve the location of a sample
+glGetNamedBufferParameteri64v	return parameters of a buffer object
+glGetNamedBufferParameteriv	return parameters of a buffer object
+glGetNamedBufferPointerv	return the pointer to a mapped buffer object's data store
+glGetNamedBufferSubData	returns a subset of a buffer object's data store
+glGetNamedFramebufferAttachmentParameteriv	retrieve information about attachments of a framebuffer object
+glGetNamedFramebufferParameteriv	query a named parameter of a framebuffer object
+glGetNamedRenderbufferParameteriv	query a named parameter of a renderbuffer object
+glGetObjectLabel	retrieve the label of a named object identified within a namespace
+glGetObjectPtrLabel	retrieve the label of a sync object identified by a pointer
+glGetPixelMap	return the specified pixel map
+glGetPointerv	return the address of the specified pointer
+glGetPolygonStipple	return the polygon stipple pattern
+glGetProgramBinary	return a binary representation of a program object's compiled and linked executable source
+glGetProgramInfoLog	Returns the information log for a program object
+glGetProgramInterface	query a property of an interface in a program
+glGetProgramPipeline	retrieve properties of a program pipeline object
+glGetProgramPipelineInfoLog	retrieve the info log string from a program pipeline object
+glGetProgramResource	retrieve values for multiple properties of a single active resource within a program object
+glGetProgramResourceIndex	query the index of a named resource within a program
+glGetProgramResourceLocation	query the location of a named resource within a program
+glGetProgramResourceLocationIndex	query the fragment color index of a named variable within a program
+glGetProgramResourceName	query the name of an indexed resource within a program
+glGetProgramStage	retrieve properties of a program object corresponding to a specified shader stage
+glGetProgramiv	Returns a parameter from a program object
+glGetQueryBufferObject	return parameters of a query object
+glGetQueryIndexediv	return parameters of an indexed query object target
+glGetQueryObject	return parameters of a query object
+glGetQueryObjectuiv	return parameters of a query object
+glGetQueryiv	return parameters of a query object target
+glGetRenderbufferParameteriv	retrieve information about a bound renderbuffer object
+glGetSamplerParameter	return sampler parameter values
+glGetSeparableFilter	get separable convolution filter kernel images
+glGetShaderInfoLog	Returns the information log for a shader object
+glGetShaderPrecisionFormat	retrieve the range and precision for numeric formats supported by the shader compiler
+glGetShaderSource	Returns the source code string from a shader object
+glGetShaderiv	Returns a parameter from a shader object
+glGetString	return a string describing the current GL connection
+glGetSubroutineIndex	retrieve the index of a subroutine uniform of a given shader stage within a program
+glGetSubroutineUniformLocation	retrieve the location of a subroutine uniform of a given shader stage within a program
+glGetSynciv	query the properties of a sync object
+glGetTexEnv	return texture environment parameters
+glGetTexGen	return texture coordinate generation parameters
+glGetTexImage	return a texture image
+glGetTexLevelParameter	return texture parameter values for a specific level of detail
+glGetTexParameter	return texture parameter values
+glGetTextureImage	return a texture image
+glGetTextureSubImage	retrieve a sub-region of a texture image from a texture object
+glGetTransformFeedbackVarying	retrieve information about varying variables selected for transform feedback
+glGetTransformFeedbackiv	query the state of a transform feedback object.
+glGetUniformBlockIndex	retrieve the index of a named uniform block
+glGetUniformIndices	retrieve the index of a named uniform block
+glGetUniformLocation	Returns the location of a uniform variable
+glGetUniformSubroutine	retrieve the value of a subroutine uniform of a given shader stage of the current program
+glGetUniformfv	Returns the value of a uniform variable
+glGetUniformiv	Returns the value of a uniform variable
+glGetVertexArrayIndexed	retrieve parameters of an attribute of a vertex array object
+glGetVertexArrayiv	retrieve parameters of a vertex array object
+glGetVertexAttribIiv	Return a generic vertex attribute parameter
+glGetVertexAttribIuiv	Return a generic vertex attribute parameter
+glGetVertexAttribLdv	Return a generic vertex attribute parameter
+glGetVertexAttribPointerv	return the address of the specified generic vertex attribute pointer
+glGetVertexAttribdv	Return a generic vertex attribute parameter
+glGetVertexAttribfv	Return a generic vertex attribute parameter
+glGetVertexAttribiv	Return a generic vertex attribute parameter
+glGetnCompressedTexImage	return a compressed texture image
+glGetnTexImage	return a texture image
+glHint	specify implementation-specific hints
+glHistogram	define histogram table
+glIndex	set the current color index
+glIndexMask	control the writing of individual bits in the color index buffers
+glIndexPointer	define an array of color indexes
+glInitNames	initialize the name stack
+glInterleavedArrays	simultaneously specify and enable several interleaved arrays
+glIntro	introduction to
+glInvalidateBufferData	invalidate the content of a buffer object's data store
+glInvalidateBufferSubData	invalidate a region of a buffer object's data store
+glInvalidateFramebuffer	invalidate the content of some or all of a framebuffer's attachments
+glInvalidateNamedFramebufferData	invalidate the content of some or all of a framebuffer's attachments
+glInvalidateNamedFramebufferSubData	invalidate the content of a region of some or all of a framebuffer's attachments
+glInvalidateSubFramebuffer	invalidate the content of a region of some or all of a framebuffer's attachments
+glInvalidateTexImage	invalidate the entirety a texture image
+glInvalidateTexSubImage	invalidate a region of a texture image
+glIsBuffer	determine if a name corresponds to a buffer object
+glIsEnabled, glIsEnabledi	test whether a capability is enabled
+glIsFramebuffer	determine if a name corresponds to a framebuffer object
+glIsList	determine if a name corresponds to a display list
+glIsProgram	Determines if a name corresponds to a program object
+glIsProgramPipeline	determine if a name corresponds to a program pipeline object
+glIsQuery	determine if a name corresponds to a query object
+glIsRenderbuffer	determine if a name corresponds to a renderbuffer object
+glIsSampler	determine if a name corresponds to a sampler object
+glIsShader	Determines if a name corresponds to a shader object
+glIsSync	determine if a name corresponds to a sync object
+glIsTexture	determine if a name corresponds to a texture
+glIsTransformFeedback	determine if a name corresponds to a transform feedback object
+glIsVertexArray	determine if a name corresponds to a vertex array object
+glLight	set light source parameters
+glLightModel	set the lighting model parameters
+glLineStipple	specify the line stipple pattern
+glLineWidth	specify the width of rasterized lines
+glLinkProgram	Links a program object
+glListBase	set the display-list base for
+glLoadIdentity	replace the current matrix with the identity matrix
+glLoadMatrix	replace the current matrix with the specified matrix
+glLoadName	load a name onto the name stack
+glLoadPaletteFromModelViewMatrixOES	copies the current model view matrix to a matrix in the current matrix palette
+glLoadTransposeMatrix	replace the current matrix with the specified row-major ordered matrix
+glLogicOp	specify a logical pixel operation for rendering
+glMap1	define a one-dimensional evaluator
+glMap2	define a two-dimensional evaluator
+glMapBuffer	map all of a buffer object's data store into the client's address space
+glMapBufferRange	map all or part of a buffer object's data store into the client's address space
+glMapGrid	define a one- or two-dimensional mesh
+glMapNamedBuffer	map all of a buffer object's data store into the client's address space
+glMapNamedBufferRange	map all or part of a buffer object's data store into the client's address space
+glMaterial	specify material parameters for the lighting model
+glMatrixIndexPointerOES	define an array of matrix indices
+glMatrixMode	specify which matrix is the current matrix
+glMemoryBarrier	defines a barrier ordering memory transactions
+glMinSampleShading	specifies minimum rate at which sample shading takes place
+glMinmax	define minmax table
+glMultMatrix	multiply the current matrix with the specified matrix
+glMultTransposeMatrix	multiply the current matrix with the specified row-major ordered matrix
+glMultiDrawArrays	render multiple sets of primitives from array data
+glMultiDrawArraysIndirect	render multiple sets of primitives from array data, taking parameters from memory
+glMultiDrawArraysIndirectCount	render multiple sets of primitives from array data, taking parameters and count from memory
+glMultiDrawElements	render multiple sets of primitives by specifying indices of array data elements
+glMultiDrawElementsBaseVertex	render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+glMultiDrawElementsIndirect	render indexed primitives from array data, taking parameters from memory
+glMultiDrawElementsIndirectCount	render indexed primitives from array data, taking parameters and count from memory
+glMultiTexCoord	set the current texture coordinates
+glNamedBufferData	creates and initializes a buffer object's data store
+glNamedBufferStorage	creates and initializes a buffer object's immutable data store
+glNamedBufferSubData	updates a subset of a buffer object's data store
+glNamedFramebufferDrawBuffer	specify which color buffers are to be drawn into
+glNamedFramebufferDrawBuffers	Specifies a list of color buffers to be drawn into
+glNamedFramebufferParameteri	set a named parameter of a framebuffer object
+glNamedFramebufferReadBuffer	select a color buffer source for pixels
+glNamedFramebufferRenderbuffer	attach a renderbuffer as a logical buffer of a framebuffer object
+glNamedFramebufferTextureLayer	attach a single layer of a texture object as a logical buffer of a framebuffer object
+glNamedRenderbufferStorage	establish data storage, format and dimensions of a renderbuffer object's image
+glNamedRenderbufferStorageMultisample	establish data storage, format, dimensions and sample count of a renderbuffer object's image
+glNewList	create or replace a display list
+glNormal	set the current normal vector
+glNormalPointer	define an array of normals
+glObjectLabel	label a named object identified within a namespace
+glObjectPtrLabel	label a sync object identified by a pointer
+glOrtho	multiply the current matrix with an orthographic matrix
+glPassThrough	place a marker in the feedback buffer
+glPatchParameter	specifies the parameters for patch primitives
+glPatchParameteri	specifies the parameters for patch primitives
+glPauseTransformFeedback	pause transform feedback operations
+glPixelMap	set up pixel transfer maps
+glPixelStore	set pixel storage modes
+glPixelStorei	set pixel storage modes
+glPixelTransfer	set pixel transfer modes
+glPixelZoom	specify the pixel zoom factors
+glPointParameter	specify point parameters
+glPointSize	specify the diameter of rasterized points
+glPointSizePointerOES	define an array of point sizes
+glPolygonMode	select a polygon rasterization mode
+glPolygonOffset	set the scale and units used to calculate depth values
+glPolygonOffsetClamp	set the scale, units and clamp used to calculate depth values
+glPolygonStipple	set the polygon stippling pattern
+glPopDebugGroup	pop the active debug group
+glPrimitiveBoundingBox	set the bounding box for a primitive
+glPrimitiveRestartIndex	specify the primitive restart index
+glPrioritizeTextures	set texture residence priority
+glProgramBinary	load a program object with a program binary
+glProgramParameter	specify a parameter for a program object
+glProgramParameteri	specify a parameter for a program object
+glProgramUniform1f	Specify the value of a uniform variable for a specified program object
+glProgramUniform1fv	Specify the value of a uniform variable for a specified program object
+glProgramUniform1i	Specify the value of a uniform variable for a specified program object
+glProgramUniform1iv	Specify the value of a uniform variable for a specified program object
+glProgramUniform1ui	Specify the value of a uniform variable for a specified program object
+glProgramUniform1uiv	Specify the value of a uniform variable for a specified program object
+glProgramUniform2f	Specify the value of a uniform variable for a specified program object
+glProgramUniform2fv	Specify the value of a uniform variable for a specified program object
+glProgramUniform2i	Specify the value of a uniform variable for a specified program object
+glProgramUniform2iv	Specify the value of a uniform variable for a specified program object
+glProgramUniform2ui	Specify the value of a uniform variable for a specified program object
+glProgramUniform2uiv	Specify the value of a uniform variable for a specified program object
+glProgramUniform3f	Specify the value of a uniform variable for a specified program object
+glProgramUniform3fv	Specify the value of a uniform variable for a specified program object
+glProgramUniform3i	Specify the value of a uniform variable for a specified program object
+glProgramUniform3iv	Specify the value of a uniform variable for a specified program object
+glProgramUniform3ui	Specify the value of a uniform variable for a specified program object
+glProgramUniform3uiv	Specify the value of a uniform variable for a specified program object
+glProgramUniform4f	Specify the value of a uniform variable for a specified program object
+glProgramUniform4fv	Specify the value of a uniform variable for a specified program object
+glProgramUniform4i	Specify the value of a uniform variable for a specified program object
+glProgramUniform4iv	Specify the value of a uniform variable for a specified program object
+glProgramUniform4ui	Specify the value of a uniform variable for a specified program object
+glProgramUniform4uiv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix2fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix2x3fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix2x4fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix3fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix3x2fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix3x4fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix4fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix4x2fv	Specify the value of a uniform variable for a specified program object
+glProgramUniformMatrix4x3fv	Specify the value of a uniform variable for a specified program object
+glProvokingVertex	specifiy the vertex to be used as the source of data for flat shaded varyings
+glPushAttrib	push and pop the server attribute stack
+glPushClientAttrib	push and pop the client attribute stack
+glPushDebugGroup	push a named debug group into the command stream
+glPushMatrix	push and pop the current matrix stack
+glPushName	push and pop the name stack
+glQueryCounter	record the GL time into a query object after all previous commands have reached the GL server but have not yet necessarily executed.
+glQueryMatrixxOES	return the values of the current matrix
+glRasterPos	specify the raster position for pixel operations
+glReadBuffer	select a color buffer source for pixels
+glReadPixels	read a block of pixels from the frame buffer
+glReadnPixels	read a block of pixels from the frame buffer
+glRect	draw a rectangle
+glReleaseShaderCompiler	release resources consumed by the implementation's shader compiler
+glRenderMode	set rasterization mode
+glRenderbufferStorage	establish data storage, format and dimensions of a renderbuffer object's image
+glRenderbufferStorageMultisample	establish data storage, format, dimensions and sample count of a renderbuffer object's image
+glResetHistogram	reset histogram table entries to zero
+glResetMinmax	reset minmax table entries to initial values
+glResumeTransformFeedback	resume transform feedback operations
+glRotate	multiply the current matrix by a rotation matrix
+glSampleCoverage	specify multisample coverage parameters
+glSampleMaski	set the value of a sub-word of the sample mask
+glSamplerParameter	set sampler parameters
+glScale	multiply the current matrix by a general scaling matrix
+glScissor	define the scissor box
+glScissorArray	define the scissor box for multiple viewports
+glScissorIndexed	define the scissor box for a specific viewport
+glSecondaryColor	set the current secondary color
+glSecondaryColorPointer	define an array of secondary colors
+glSelectBuffer	establish a buffer for selection mode values
+glSeparableFilter2D	define a separable two-dimensional convolution filter
+glShadeModel	select flat or smooth shading
+glShaderBinary	load pre-compiled shader binaries
+glShaderSource	Replaces the source code in a shader object
+glShaderStorageBlockBinding	change an active shader storage block binding
+glStencilFunc	set front and back function and reference value for stencil testing
+glStencilFuncSeparate	set front and/or back function and reference value for stencil testing
+glStencilMask	control the front and back writing of individual bits in the stencil planes
+glStencilMaskSeparate	control the front and/or back writing of individual bits in the stencil planes
+glStencilOp	set front and back stencil test actions
+glStencilOpSeparate	set front and/or back stencil test actions
+glTexBuffer	attach a buffer object's data store to a buffer texture object
+glTexBufferRange	attach a range of a buffer object's data store to a buffer texture object
+glTexCoord	set the current texture coordinates
+glTexCoordPointer	define an array of texture coordinates
+glTexEnv	set texture environment parameters
+glTexGen	control the generation of texture coordinates
+glTexImage1D	specify a one-dimensional texture image
+glTexImage2D	specify a two-dimensional texture image
+glTexImage2DMultisample	establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+glTexImage3D	specify a three-dimensional texture image
+glTexImage3DMultisample	establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+glTexParameter	set texture parameters
+glTexStorage1D	simultaneously specify storage for all levels of a one-dimensional texture
+glTexStorage2D	simultaneously specify storage for all levels of a two-dimensional or one-dimensional array texture
+glTexStorage2DMultisample	specify storage for a two-dimensional multisample texture
+glTexStorage3D	simultaneously specify storage for all levels of a three-dimensional, two-dimensional array or cube-map array texture
+glTexStorage3DMultisample	specify storage for a two-dimensional multisample array texture
+glTexSubImage1D	specify a one-dimensional texture subimage
+glTexSubImage2D	specify a two-dimensional texture subimage
+glTexSubImage3D	specify a three-dimensional texture subimage
+glTextureBarrier	controls the ordering of reads and writes to rendered fragments across drawing commands
+glTextureBuffer	attach a buffer object's data store to a buffer texture object
+glTextureBufferRange	attach a range of a buffer object's data store to a buffer texture object
+glTextureParameter	set texture parameters
+glTextureStorage1D	simultaneously specify storage for all levels of a one-dimensional texture
+glTextureStorage2D	simultaneously specify storage for all levels of a two-dimensional or one-dimensional array texture
+glTextureStorage2DMultisample	specify storage for a two-dimensional multisample texture
+glTextureStorage3D	simultaneously specify storage for all levels of a three-dimensional, two-dimensional array or cube-map array texture
+glTextureStorage3DMultisample	specify storage for a two-dimensional multisample array texture
+glTextureSubImage1D	specify a one-dimensional texture subimage
+glTextureSubImage2D	specify a two-dimensional texture subimage
+glTextureSubImage3D	specify a three-dimensional texture subimage
+glTextureView	initialize a texture as a data alias of another texture's data store
+glTransformFeedbackBufferBase	bind a buffer object to a transform feedback buffer object
+glTransformFeedbackBufferRange	bind a range within a buffer object to a transform feedback buffer object
+glTransformFeedbackVaryings	specify values to record in transform feedback buffers
+glTranslate	multiply the current matrix by a translation matrix
+glUniform1f	Specify the value of a uniform variable for the current program object
+glUniform1fv	Specify the value of a uniform variable for the current program object
+glUniform1i	Specify the value of a uniform variable for the current program object
+glUniform1iv	Specify the value of a uniform variable for the current program object
+glUniform1ui	Specify the value of a uniform variable for the current program object
+glUniform1uiv	Specify the value of a uniform variable for the current program object
+glUniform2f	Specify the value of a uniform variable for the current program object
+glUniform2fv	Specify the value of a uniform variable for the current program object
+glUniform2i	Specify the value of a uniform variable for the current program object
+glUniform2iv	Specify the value of a uniform variable for the current program object
+glUniform2ui	Specify the value of a uniform variable for the current program object
+glUniform2uiv	Specify the value of a uniform variable for the current program object
+glUniform3f	Specify the value of a uniform variable for the current program object
+glUniform3fv	Specify the value of a uniform variable for the current program object
+glUniform3i	Specify the value of a uniform variable for the current program object
+glUniform3iv	Specify the value of a uniform variable for the current program object
+glUniform3ui	Specify the value of a uniform variable for the current program object
+glUniform3uiv	Specify the value of a uniform variable for the current program object
+glUniform4f	Specify the value of a uniform variable for the current program object
+glUniform4fv	Specify the value of a uniform variable for the current program object
+glUniform4i	Specify the value of a uniform variable for the current program object
+glUniform4iv	Specify the value of a uniform variable for the current program object
+glUniform4ui	Specify the value of a uniform variable for the current program object
+glUniform4uiv	Specify the value of a uniform variable for the current program object
+glUniformBlockBinding	assign a binding point to an active uniform block
+glUniformMatrix2fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix2x3fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix2x4fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix3fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix3x2fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix3x4fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix4fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix4x2fv	Specify the value of a uniform variable for the current program object
+glUniformMatrix4x3fv	Specify the value of a uniform variable for the current program object
+glUniformSubroutines	load active subroutine uniforms
+glUnmapBuffer	release the mapping of a buffer object's data store into the client's address space
+glUnmapNamedBuffer	release the mapping of a buffer object's data store into the client's address space
+glUseProgram	Installs a program object as part of current rendering state
+glUseProgramStages	bind stages of a program object to a program pipeline
+glValidateProgram	Validates a program object
+glValidateProgramPipeline	validate a program pipeline object against current GL state
+glVertex	specify a vertex
+glVertexArrayAttribFormat	specify the organization of vertex arrays
+glVertexArrayBindingDivisor	modify the rate at which generic vertex attributes advance
+glVertexArrayElementBuffer	configures element array buffer binding of a vertex array object
+glVertexArrayVertexBuffer	bind a buffer to a vertex buffer bind point
+glVertexArrayVertexBuffers	attach multiple buffer objects to a vertex array object
+glVertexAttrib	Specifies the value of a generic vertex attribute
+glVertexAttribBinding	associate a vertex attribute and a vertex buffer binding for a vertex array object
+glVertexAttribDivisor	modify the rate at which generic vertex attributes advance during instanced rendering
+glVertexAttribFormat	specify the organization of vertex arrays
+glVertexAttribPointer	define an array of generic vertex attribute data
+glVertexBindingDivisor	modify the rate at which generic vertex attributes advance
+glVertexPointer	define an array of vertex data
+glViewport	set the viewport
+glViewportArray	set multiple viewports
+glViewportIndexed	set a specified viewport
+glWaitSync	instruct the GL server to block until the specified sync object becomes signaled
+glWeightPointerOES	define an array of weights
+glWindowPos	specify the raster position in window coordinates for pixel operations
+glXChooseFBConfig	return a list of GLX frame buffer configurations that match the specified attributes
+glXChooseVisual	return a visual that matches specified attributes
+glXCopyContext	copy state from one rendering context to another
+glXCreateContext	create a new GLX rendering context
+glXCreateGLXPixmap	create an off-screen GLX rendering area
+glXCreateNewContext	create a new GLX rendering context
+glXCreatePbuffer	create an off-screen rendering area
+glXCreatePixmap	create an off-screen rendering area
+glXCreateWindow	create an on-screen rendering area
+glXDestroyContext	destroy a GLX context
+glXDestroyGLXPixmap	destroy a GLX pixmap
+glXDestroyPbuffer	destroy an off-screen rendering area
+glXDestroyPixmap	destroy an off-screen rendering area
+glXDestroyWindow	destroy an on-screen rendering area
+glXFreeContextEXT	free client-side memory for imported context
+glXGetClientString	return a string describing the client
+glXGetConfig	return information about GLX visuals
+glXGetContextIDEXT	get the XID for a context.
+glXGetCurrentContext	return the current context
+glXGetCurrentDisplay	get display for current context
+glXGetCurrentDrawable	return the current drawable
+glXGetCurrentReadDrawable	return the current drawable
+glXGetFBConfigAttrib	return information about a GLX frame buffer configuration
+glXGetFBConfigs	list all GLX frame buffer configurations for a given screen
+glXGetProcAddress	obtain a pointer to an OpenGL or GLX function
+glXGetSelectedEvent	returns GLX events that are selected for a window or a GLX pixel buffer
+glXGetVisualFromFBConfig	return visual that is associated with the frame buffer configuration
+glXImportContextEXT	import another process's indirect rendering context.
+glXIntro	Introduction to OpenGL in the X window system
+glXIsDirect	indicate whether direct rendering is enabled
+glXMakeContextCurrent	attach a GLX context to a GLX drawable
+glXMakeCurrent	attach a GLX context to a window or a GLX pixmap
+glXQueryContext	query context information
+glXQueryContextInfoEXT	query context information
+glXQueryDrawable	returns an attribute associated with a GLX drawable
+glXQueryExtension	indicate whether the GLX extension is supported
+glXQueryExtensionsString	return list of supported extensions
+glXQueryServerString	return string describing the server
+glXQueryVersion	return the version numbers of the GLX extension
+glXSelectEvent	select GLX events for a window or a GLX pixel buffer
+glXSwapBuffers	exchange front and back buffers
+glXUseXFont	create bitmap display lists from an X font
+glXWaitGL	complete GL execution prior to subsequent X calls
+glXWaitX	complete X execution prior to subsequent GL calls
