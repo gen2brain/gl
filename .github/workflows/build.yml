@@ -1,0 +1,164 @@
+on: [push, pull_request]
+name: Build
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version: [1.25.x]
+        os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Install packages
+      run: |
+        sudo apt-get update -y; sudo apt-get -y install libegl1 libgl1 libgles2 libgl1-mesa-dri xvfb
+      if: runner.os == 'Linux'
+    - name: Verify dependencies
+      run: go mod verify
+    - name: Run go vet
+      run: go vet ./...
+    - name: Run tests
+      run: xvfb-run -a go test -v ./...
+      if: runner.os == 'Linux'
+    - name: Run tests
+      run: go test -v ./...
+      if: runner.os != 'Linux'
+      env:
+        CC: gcc
+    - name: Run tests without cgo
+      run: go test -v ./internal/call
+      if: runner.os != 'Windows'
+      env:
+        CGO_ENABLED: 0
+
+  test-386:
+    strategy:
+      matrix:
+        go-version: [1.25.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Install packages
+      run: |
+        sudo dpkg --add-architecture i386; sudo apt-get update -y
+        sudo apt-get -y install gcc-multilib libegl1:i386 libgl1:i386 libgles2:i386 libgl1-mesa-dri:i386
+    - name: Build test library
+      run: gcc -m32 -shared -fPIC -O2 -o ${{ runner.temp }}/libabi.so internal/call/testdata/abi.c
+    - name: Run tests
+      run: go test -v ./internal/call ./internal/gltest
+      env:
+        GOARCH: 386
+        CGO_ENABLED: 0
+        CALL_TESTLIB: ${{ runner.temp }}/libabi.so
+
+  test-arm:
+    strategy:
+      matrix:
+        go-version: [1.25.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Install packages
+      run: |
+        sudo apt-get update -y; sudo apt-get -y install qemu-user gcc-arm-linux-gnueabihf libc6-armhf-cross
+    - name: Build test library
+      run: arm-linux-gnueabihf-gcc -shared -fPIC -O2 -o ${{ runner.temp }}/libabi.so internal/call/testdata/abi.c
+    - name: Build tests
+      run: go test -c -o ${{ runner.temp }}/call.test ./internal/call
+      env:
+        GOARCH: arm
+        CGO_ENABLED: 0
+    - name: Run tests
+      run: |
+        qemu-arm -L /usr/arm-linux-gnueabihf /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 \
+          --library-path /usr/arm-linux-gnueabihf/lib ${{ runner.temp }}/call.test -test.v
+      env:
+        CALL_TESTLIB: ${{ runner.temp }}/libabi.so
+
+  cross:
+    strategy:
+      matrix:
+        go-version: [1.25.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Run go vet
+      run: |
+        for target in linux/arm windows/386 windows/arm64 darwin/amd64 netbsd/amd64 netbsd/arm64 freebsd/arm64 js/wasm; do
+          echo "$target"
+          GOOS=${target%/*} GOARCH=${target#*/} CGO_ENABLED=0 go vet ./...
+        done
+    - name: Build
+      run: GOOS=freebsd GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=github.com/ebitengine/purego/internal/fakecgo=-std ./...
+
+  generate:
+    strategy:
+      matrix:
+        go-version: [1.25.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Generate
+      run: go run ./internal/glgen && git diff --exit-code
+    - name: Compare with go-gl
+      run: |
+        go mod download -json github.com/go-gl/gl@v0.0.0-20260331235117-4566fea9a276 > gogl.json
+        GLGEN_GOGL=$(jq -r .Dir gogl.json) go test -v -run 'GoGLCompat|WebGLParity' ./internal/glgen
+
+  wasm:
+    strategy:
+      matrix:
+        go-version: [1.25.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Build
+      run: |
+        mkdir -p ${{ runner.temp }}/www
+        GOOS=js GOARCH=wasm go build -o ${{ runner.temp }}/www/test.wasm ./internal/gltest/wasm
+        cp "$(go env GOROOT)/lib/wasm/wasm_exec.js" ${{ runner.temp }}/www/
+        cat > ${{ runner.temp }}/www/index.html <<'EOF'
+        <!doctype html><html><body><script src="wasm_exec.js"></script><script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("test.wasm"), go.importObject).then(r => go.run(r.instance));
+        </script></body></html>
+        EOF
+    - name: Run test in Chrome
+      run: |
+        cd ${{ runner.temp }}/www
+        python3 -m http.server 18765 --bind 127.0.0.1 &
+        sleep 1
+        google-chrome --headless=new --no-sandbox --enable-unsafe-swiftshader --virtual-time-budget=20000 \
+          --dump-dom http://127.0.0.1:18765/index.html 2>/dev/null | grep -o '<pre id="result">[^<]*' | tee result.txt
+        grep -q '>PASS' result.txt

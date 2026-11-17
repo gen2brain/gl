@@ -24,6 +24,13 @@ func withContext(t *testing.T, c Config, f func(t *testing.T)) {
 				t.Skip(err)
 			}
 			defer release()
+			major, minor, err := Version(c)
+			if err != nil {
+				t.Skip(err)
+			}
+			if major*10+minor < c.Major*10+c.Minor {
+				t.Skipf("context version %d.%d", major, minor)
+			}
 			f(t)
 		})
 	}
