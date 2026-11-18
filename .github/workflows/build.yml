@@ -151,7 +151,7 @@ jobs:
       run: |
         mkdir -p ${{ runner.temp }}/www
         GOOS=js GOARCH=wasm go build -o ${{ runner.temp }}/www/test.wasm ./internal/gltest/wasm
-        cp "$(go env GOROOT)/lib/wasm/wasm_exec.js" ${{ runner.temp }}/www/
+        cp "$(go env GOROOT)"/*/wasm/wasm_exec.js ${{ runner.temp }}/www/
         cat > ${{ runner.temp }}/www/index.html <<'EOF'
         <!doctype html><html><body><script src="wasm_exec.js"></script><script>
         const go = new Go();
