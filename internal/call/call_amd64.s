@@ -1,4 +1,4 @@
-//go:build darwin || freebsd || linux || netbsd || windows
+//go:build darwin || freebsd || haiku || linux || netbsd || windows
 
 #include "textflag.h"
 #include "go_asm.h"

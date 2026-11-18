@@ -1,4 +1,4 @@
-//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (386 && (linux || windows)) || (arm && linux)
+//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (amd64 && haiku) || (386 && (linux || windows)) || (arm && linux)
 
 // Package call calls C functions with integer and floating-point arguments.
 //
@@ -10,8 +10,6 @@ import (
 	"runtime"
 	"sync"
 	"unsafe"
-
-	_ "github.com/ebitengine/purego"
 )
 
 // Argument kinds, four bits per argument in a descriptor.

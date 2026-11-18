@@ -8,7 +8,7 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/ebitengine/purego"
+	"github.com/gen2brain/gl/internal/debugcb"
 )
 
 var (
@@ -23,11 +23,10 @@ func debugCallback(callback DebugProc) uintptr {
 		return 0
 	}
 	debugCallbackOnce.Do(func() {
-		debugCallbackPtr = purego.NewCallback(func(source, gltype, id, severity uint32, length int32, message *uint8, userParam unsafe.Pointer) uintptr {
+		debugCallbackPtr = debugcb.New(func(source, gltype, id, severity uint32, length int32, message *uint8, userParam unsafe.Pointer) {
 			if cb := userDebugCallback; cb != nil {
 				cb(source, gltype, id, severity, length, GoStr(message), userParam)
 			}
-			return 0
 		})
 	})
 	return debugCallbackPtr

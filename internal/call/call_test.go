@@ -1,4 +1,4 @@
-//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (386 && (linux || windows)) || (arm && linux)
+//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (amd64 && haiku) || (386 && (linux || windows)) || (arm && linux)
 
 package call
 
