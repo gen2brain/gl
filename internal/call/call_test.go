@@ -171,8 +171,7 @@ func BenchmarkCall(b *testing.B) {
 	}
 	fn := sym(b, loadLib(b), "uniform1f")
 	b.ReportAllocs()
-	b.ResetTimer()
-	for range b.N {
+	for b.Loop() {
 		FCall2(fn, I32|F32<<4, 3, uintptr(math.Float32bits(0.5)))
 	}
 }
