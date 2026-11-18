@@ -5,7 +5,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
         os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -40,7 +40,7 @@ jobs:
   test-386:
     strategy:
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -65,7 +65,7 @@ jobs:
   test-arm:
     strategy:
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -94,7 +94,7 @@ jobs:
   cross:
     strategy:
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -113,13 +113,13 @@ jobs:
       run: |
         for arch in amd64 arm64; do
           echo "freebsd/$arch"
-          GOOS=freebsd GOARCH=$arch CGO_ENABLED=0 go build -gcflags=github.com/gen2brain/purego/internal/fakecgo=-std ./...
+          GOOS=freebsd GOARCH=$arch CGO_ENABLED=0 go build -gcflags=github.com/ebitengine/purego/internal/fakecgo=-std ./...
         done
 
   generate:
     strategy:
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -138,7 +138,7 @@ jobs:
   wasm:
     strategy:
       matrix:
-        go-version: [1.24.x]
+        go-version: [1.25.x]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code

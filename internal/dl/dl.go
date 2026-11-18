@@ -1,4 +1,4 @@
-//go:build darwin || freebsd || haiku || linux || netbsd
+//go:build darwin || freebsd || linux || netbsd
 
 // Package dl loads shared libraries and resolves symbols.
 package dl
@@ -6,7 +6,7 @@ package dl
 import (
 	"fmt"
 
-	"github.com/gen2brain/purego"
+	"github.com/ebitengine/purego"
 )
 
 // Open loads the first library in names that can be loaded.
