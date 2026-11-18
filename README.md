@@ -56,9 +56,10 @@ if err := gl.InitWithContext(canvas.Call("getContext", "webgl2")); err != nil {
 
 * Linux, FreeBSD, NetBSD, Windows, macOS on amd64 and arm64
 * Linux and Windows on 386, Linux on arm (hard float)
+* Haiku on amd64
 * js/wasm (`v3.0/gles2`)
 
-Binaries still load the system libraries at run time. On FreeBSD, `CGO_ENABLED=0` builds need `-gcflags=github.com/ebitengine/purego/internal/fakecgo=-std`.
+Binaries still load the system libraries at run time. On FreeBSD, `CGO_ENABLED=0` builds need `-gcflags=github.com/gen2brain/purego/internal/fakecgo=-std`.
 
 ### Generating
 

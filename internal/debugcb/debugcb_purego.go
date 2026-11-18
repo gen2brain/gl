@@ -1,11 +1,11 @@
-//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (386 && (linux || windows)) || (arm && linux)
+//go:build ((amd64 || arm64) && (darwin || freebsd || linux || netbsd || windows)) || (amd64 && haiku) || (386 && (linux || windows)) || (arm && linux)
 
 package debugcb
 
 import (
 	"unsafe"
 
-	"github.com/ebitengine/purego"
+	"github.com/gen2brain/purego"
 )
 
 // New returns a GLDEBUGPROC that calls f.

@@ -113,7 +113,7 @@ jobs:
       run: |
         for arch in amd64 arm64; do
           echo "freebsd/$arch"
-          GOOS=freebsd GOARCH=$arch CGO_ENABLED=0 go build -gcflags=github.com/ebitengine/purego/internal/fakecgo=-std ./...
+          GOOS=freebsd GOARCH=$arch CGO_ENABLED=0 go build -gcflags=github.com/gen2brain/purego/internal/fakecgo=-std ./...
         done
 
   generate:

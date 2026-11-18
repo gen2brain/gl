@@ -8,7 +8,7 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/ebitengine/purego"
+	"github.com/gen2brain/purego"
 
 	"github.com/gen2brain/gl/internal/call"
 	"github.com/gen2brain/gl/internal/dl"
